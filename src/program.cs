@@ -3,6 +3,9 @@ using static System.Console;
 
 var envKeyName = "AZURE_OPENAI_KEY";
 var envUrlName = "AZURE_OPENAI_URL";
+var envDeploymentName = "AZURE_OPENAI_DEPLOYMENT";
+
+var deploymentName = Environment.GetEnvironmentVariable(envDeploymentName) ?? "gpt-4-turbo";
 
 var url = Environment.GetEnvironmentVariable(envUrlName);
 if (String.IsNullOrEmpty(url))
@@ -22,7 +25,7 @@ var client = new OpenAIClient(new Uri(url), new Azure.AzureKeyCredential(secret)
 
 var chatCompletionOptions = new ChatCompletionsOptions()
 {
-    DeploymentName = "gpt-4-32k",
+    DeploymentName = deploymentName,
     ChoiceCount = 1
 };
 
@@ -44,10 +47,14 @@ while (true)
     if (String.IsNullOrEmpty(nextUserMessage)) { break; }
     messages.Add(new ChatRequestUserMessage(nextUserMessage));
 
-    ChatCompletions response = await client.GetChatCompletionsAsync(chatCompletionOptions, CancellationToken.None);
-    var nextAssistantMessage = response.Choices[0].Message.Content;
+    var nextAssistantMessage = String.Empty;
+    await foreach (var streamUpdate in await client.GetChatCompletionsStreamingAsync(chatCompletionOptions, CancellationToken.None))
+    {
+        if (streamUpdate.ChoiceIndex is not 0) continue;
+        Write(streamUpdate.ContentUpdate);
+        nextAssistantMessage += streamUpdate.ContentUpdate;
+    }
     WriteLine();
-    WriteLine(nextAssistantMessage);
     messages.Add(new ChatRequestAssistantMessage(nextAssistantMessage));
 }
 

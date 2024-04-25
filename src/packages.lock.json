@@ -4,21 +4,22 @@
     "net8.0": {
       "Azure.AI.OpenAI": {
         "type": "Direct",
-        "requested": "[1.0.0-beta.13, )",
-        "resolved": "1.0.0-beta.13",
-        "contentHash": "os94QoVr4n2ojI6lvhSa9lL9FT4bIczzGzdfcQgAMAJdf1H2p6TGMb+7pUxdWIOPVZ8my+IKo86KObMZL+WQEg==",
+        "requested": "[1.0.0-beta.16, )",
+        "resolved": "1.0.0-beta.16",
+        "contentHash": "7pqZPah4Z0PiQkeINnwMWwtI7B0+xO6mXm41epLOyuaESVAU5GfxntpmP6NQmxsK/tOD01VXFo+8Nw6INfSktQ==",
         "dependencies": {
-          "Azure.Core": "1.37.0",
+          "Azure.Core": "1.38.0",
           "System.ClientModel": "1.0.0",
           "System.Text.Json": "4.7.2"
         }
       },
       "Azure.Core": {
         "type": "Transitive",
-        "resolved": "1.37.0",
-        "contentHash": "ZSWV/ftBM/c/+Eo2hlzeEWntjqNG+8TWXX/DAKjBSWIf7nEvFILQoJL7JZx5HjypDvdNUMj5J2ji8ZpFFSghSg==",
+        "resolved": "1.38.0",
+        "contentHash": "IuEgCoVA0ef7E4pQtpC3+TkPbzaoQfa77HlfJDmfuaJUCVJmn7fT0izamZiryW5sYUFKizsftIxMkXKbgIcPMQ==",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
+          "System.ClientModel": "1.0.0",
           "System.Diagnostics.DiagnosticSource": "6.0.1",
           "System.Memory.Data": "1.0.2",
           "System.Numerics.Vectors": "4.5.0",
