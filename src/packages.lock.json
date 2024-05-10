@@ -4,19 +4,19 @@
     "net8.0": {
       "Azure.AI.OpenAI": {
         "type": "Direct",
-        "requested": "[1.0.0-beta.16, )",
-        "resolved": "1.0.0-beta.16",
-        "contentHash": "7pqZPah4Z0PiQkeINnwMWwtI7B0+xO6mXm41epLOyuaESVAU5GfxntpmP6NQmxsK/tOD01VXFo+8Nw6INfSktQ==",
+        "requested": "[1.0.0-beta.17, )",
+        "resolved": "1.0.0-beta.17",
+        "contentHash": "cYTqSHxST4+xyXWa+J0TFid8r5/pX/qLxQ22jynSHY2ACe93rnZ5GPiNtZ06c4pWvm1TPX5aJntED6im6xnzCA==",
         "dependencies": {
-          "Azure.Core": "1.38.0",
+          "Azure.Core": "1.39.0",
           "System.ClientModel": "1.0.0",
           "System.Text.Json": "4.7.2"
         }
       },
       "Azure.Core": {
         "type": "Transitive",
-        "resolved": "1.38.0",
-        "contentHash": "IuEgCoVA0ef7E4pQtpC3+TkPbzaoQfa77HlfJDmfuaJUCVJmn7fT0izamZiryW5sYUFKizsftIxMkXKbgIcPMQ==",
+        "resolved": "1.39.0",
+        "contentHash": "9vaV4ZICtVQp+2wjOKrIAjEjMzBkUohaBbKGqqcTW993MRfHA0N4L1BszQjWynS7lRvlYQLxaFK4wh9ewNm4HQ==",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
           "System.ClientModel": "1.0.0",
